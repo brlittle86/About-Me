@@ -1,3 +1,15 @@
-﻿body
-{
+h1 {
+  font-family: helvetica;
+}
+
+p {
+  color: blue;
+}
+
+.more-content {
+  background-color: #00FF00;
+}
+
+#something-else {
+  border: 5px dashed #FF0000;
 }
