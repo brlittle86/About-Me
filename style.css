@@ -1,9 +1,26 @@
+body {
+  width: 800px;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  background-color: #949494;
+}
+
 h1 {
   font-family: helvetica;
+  background-color: blue;
+  text-align: center;
+  margin: auto;
+  border: 5px solid #000000;
+  border-radius: 14px;
+  padding: 3px;
 }
 
 p {
   color: blue;
+  border: 2px solid white;
+  background-color: black;
+  border-radius: 10px;
 }
 
 .more-content {
@@ -11,5 +28,6 @@ p {
 }
 
 #something-else {
-  border: 5px dashed #FF0000;
+  border: 2px dashed #FF0000;
+  background-color: yellow;
 }
