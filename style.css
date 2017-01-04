@@ -3,7 +3,9 @@ body {
   height: 100%;
   margin: auto;
   text-align: center;
-  background-image: url(https://i.ytimg.com/vi/b6dT4kyVUuY/maxresdefault.jpg);
+  background-image: url(https://openclipart.org/image/2400px/svg_to_png/13778/alnilam-Stars-Pattern.png);
+  background-attachment: fixed;
+  background-position: center;
 }
 
 h1 {
@@ -27,7 +29,22 @@ p {
   background-color: #00FF00;
 }
 
+.guess {
+  background-color: white;
+  font: #000000;
+  border-radius: 10px;
+  border: 2px solid blue;
+}
+
 #something-else {
   border: 2px dashed #FF0000;
   background-color: yellow;
+}
+
+img {
+  height: 135px;
+  width: 185px;
+  margin: auto;
+  border: 3px solid #FFFFFF;
+  border-radius: 20px;
 }

@@ -32,7 +32,7 @@ if (answer2 === 'y' || answer2 === 'yes') {
   alert(feedback);
 }
 document.open();
-document.write('<p>' + response + ' ' + feedback + '</p>');
+document.write('<p class="guess">' + response + ' ' + feedback + '</p>');
 document.close();
 
 var answer3 = prompt('Does Brandon have any pets?').toLowerCase();
@@ -51,7 +51,7 @@ if (answer3 === 'y' || answer3 === 'yes') {
   alert(feedback);
 }
 document.open();
-document.write('<p>' + response + ' ' + feedback + '</p>');
+document.write('<p class="guess">' + response + ' ' + feedback + '</p>');
 document.close();
 
 var answer4 = prompt('Is Brandon adventurous with his food?').toLowerCase();
@@ -70,7 +70,7 @@ if (answer4 === 'y' || answer4 === 'yes') {
   alert(feedback);
 }
 document.open();
-document.write('<p>' + response + ' ' + feedback + '</p>');
+document.write('<p class="guess">' + response + ' ' + feedback + '</p>');
 document.close();
 
 var answer5 = prompt('Do you think that Brandon knows any other languages beyond English?').toLowerCase();
@@ -89,7 +89,7 @@ if (answer5 === 'y' || answer5 === 'yes') {
   alert(feedback);
 }
 document.open();
-document.write('<p>' + response + ' ' + feedback + '</p>');
+document.write('<p class="guess">' + response + ' ' + feedback + '</p>');
 document.close();
 
 var answer6 = prompt('Is Brandon over the age of 30?').toLowerCase();
@@ -108,5 +108,5 @@ if (answer6 === 'y' || answer6 === 'yes') {
   alert(feedback);
 }
 document.open();
-document.write('<p>' + response + ' ' + feedback + '</p>');
+document.write('<p class="guess">' + response + ' ' + feedback + '</p>');
 document.close();
