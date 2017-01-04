@@ -4,7 +4,7 @@ var answer1 = confirm('Are you ready to play a guessing game?');
 if (answer1) {
   console.log('Woo! User is ready!');
 } else {
-  console.log('Sorry, too bad...');
+  console.log('User is apparently not ready...');
 }
 
 var user = prompt('What is your name?');
