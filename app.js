@@ -1,5 +1,6 @@
 'use strict';
 
+//confirm readiness of user to play.
 var answer1 = confirm('Are you ready to play a guessing game?');
 if (answer1) {
   console.log('Woo! User is ready!');
@@ -7,6 +8,7 @@ if (answer1) {
   console.log('User is apparently not ready...');
 }
 
+//acquire user's name.
 var user = prompt('What is your name?');
 if (user) {
   console.log('User name is: ' + user);
@@ -14,15 +16,18 @@ if (user) {
   console.log('User name is invalid or null!');
 }
 
+//variables to be used through the code.
 var response;
 var feedback;
 var correct = 0;
 
+//arrays containing the questions, answers, and answer key, organized so that the array position of each item corresponds to the strings in the same array position in the other arrays.
 var questions = ['Do you think Brandon is secretly a ninja?', 'Does Brandon have any pets?', 'Is Brandon adventurous with his food?', 'Do you think that Brandon knows any other languages beyond English?', 'Do you think that Brandon is over the age of 30?'];
 var yesAnswers = ['He\'d like to think so!', 'He does not, but he likes cats!', 'He has tried a wide variety of exotic foods, such as dog in Korea and snake in Arizona.', 'Brandon speaks Korean and has studied Japanese since before High School.', 'He is currently 30!'];
 var noAnswers = ['You are probably right!', 'He wishes he had a cat', 'Sorry, but Brandon will try anything.', 'That\'s where you\'re wrong, buddy!', 'Thank you, but he is currently 30.'];
 var corAns = [['n', 'no'],['n', 'no'],['y', 'yes'],['y', 'yes'],['y', 'yes']];
 
+//This loop pulls the question, assesses the user's response, pulls the appropriate feedback and checks correctness for each of the array positions in the questions array, then writes the question, answer, and feedback to the webpage.
 for (var count = 0; count < questions.length; count++) {
   var answer = prompt(questions[count]);
   if (answer === 'y' || answer === 'yes') {
@@ -46,6 +51,7 @@ for (var count = 0; count < questions.length; count++) {
   }
 }
 
+//This loop generates a random number, then gives the user 4 total tries to guess the number, with feedback to guide the user towards the correct answer.
 var randomNum = Math.floor((Math.random() * 10) + 1);
 for (var guess = 4; guess >= 1; guess--) {
   var answer7 = prompt('Can you guess a random number between 1 and 10? You have ' + (guess - 1) + ' more tries.');
@@ -72,6 +78,7 @@ for (var guess = 4; guess >= 1; guess--) {
   }
 }
 
+//This loop asks the user to guess an answer from an array of strings. The user is given 6 attempts, and whether successful or not, the contents of the array is displayed to the user and written to the webpage.
 var question8 = ['oreos', 'sour patch kids', 'peanut butter m&ms', 'pretzels', 'chips', 'ice cream'];
 var confirm = false;
 for (var guess = 6; guess >= 1; guess--) {
@@ -99,6 +106,7 @@ document.open();
 document.write('<p class="guess">Here are some of my favorite snacks: ' + question8 + '</p>');
 document.close();
 
+//This portion evaluates the user's accuracy for guessing the answers and provides contextual feedback based on how they did.
 var result;
 if (correct > 5) {
   result = 'Great job!';
