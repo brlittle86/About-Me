@@ -21,24 +21,22 @@ var correct = 0;
 var questions = ['Do you think Brandon is secretly a ninja?', 'Does Brandon have any pets?', 'Is Brandon adventurous with his food?', 'Do you think that Brandon knows any other languages beyond English?', 'Do you think that Brandon is over the age of 30?'];
 var yesAnswers = ['He\'d like to think so!', 'He does not, but he likes cats!', 'He has tried a wide variety of exotic foods, such as dog in Korea and snake in Arizona.', 'Brandon speaks Korean and has studied Japanese since before High School.', 'He is currently 30!'];
 var noAnswers = ['You are probably right!', 'He wishes he had a cat', 'Sorry, but Brandon will try anything.', 'That\'s where you\'re wrong, buddy!', 'Thank you, but he is currently 30.'];
+var corAns = [['n', 'no'],['n', 'no'],['y', 'yes'],['y', 'yes'],['y', 'yes']];
 
 for (var count = 0; count < questions.length; count++) {
   var answer = prompt(questions[count]);
   if (answer === 'y' || answer === 'yes') {
     feedback = yesAnswers[count];
     alert(feedback);
-    if (count >= 2) {
-      correct++;
-    }
   } else if (answer === 'n' || answer === 'no') {
     feedback = noAnswers[count];
     alert(feedback);
-    if (count < 2) {
-      correct++;
-    }
   } else {
     alert('Invalid response given.');
     count--;
+  }
+  if (answer === corAns[count][0] || answer === corAns[count][1]) {
+    correct++;
   }
 }
 // var answer2 = prompt('Do you think Brandon is secretly a ninja?').toLowerCase();
