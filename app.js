@@ -46,27 +46,31 @@ for (var count = 0; count < questions.length; count++) {
   }
 }
 
+var randomNum = Math.floor((Math.random() * 10) + 1);
 for (var guess = 4; guess >= 1; guess--) {
-  var answer7 = prompt('Can you guess my favorite number? You have ' + (guess - 1) + ' more tries.');
+  var answer7 = prompt('Can you guess a random number between 1 and 10? You have ' + (guess - 1) + ' more tries.');
   console.log(user + ' entered: ' + answer7);
-  if (parseInt(answer7) === 42) {
-    feedback = 'The answer to life, the universe, and everything is 42.';
+  if (parseInt(answer7) === randomNum) {
+    feedback = 'Congratulations on guessing the number!';
     alert(feedback);
     guess = 0;
     correct++;
+    document.open();
+    document.write('<p class="guess">' + feedback + '</p>');
+    document.close();
   } else if (guess > 1) {
-    if (parseInt(answer7) > 42) {
+    if (parseInt(answer7) > randomNum) {
       alert('Your guess was too high! Try again!');
     } else {
       alert('Your guess was too low! Try again!');
     }
   } else {
-    alert('You are out of tries! The answer was 42.');
+    alert('You are out of tries! The answer was ' + randomNum);
+    document.open();
+    document.write('<p class="guess">' + user + ' was unable to guess the number ' + randomNum + '</p>');
+    document.close();
   }
 }
-document.open();
-document.write('<p class="guess">' + feedback + '</p>');
-document.close();
 
 var question8 = ['oreos', 'sour patch kids', 'peanut butter m&ms', 'pretzels', 'chips', 'ice cream'];
 var confirm = false;
