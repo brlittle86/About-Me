@@ -29,23 +29,20 @@ var corAns = [['n', 'no'],['n', 'no'],['y', 'yes'],['y', 'yes'],['y', 'yes']];
 
 //This loop pulls the question, assesses the user's response, pulls the appropriate feedback and checks correctness for each of the array positions in the questions array, then writes the question, answer, and feedback to the webpage.
 for (var count = 0; count < questions.length; count++) {
-  var answer = prompt(questions[count]);
+  var answer = prompt(questions[count]).toLowerCase();
   if (answer === 'y' || answer === 'yes') {
     feedback = yesAnswers[count];
     alert(feedback);
-    document.open();
     document.write('<p class="guess">' + questions[count] + ' ' + user + ' said: ' + answer + '. ' + feedback + '</p>');
-    document.close();
   } else if (answer === 'n' || answer === 'no') {
     feedback = noAnswers[count];
     alert(feedback);
-    document.open();
     document.write('<p class="guess">' + questions[count] + ' ' + user + ' said: ' + answer + '. ' + feedback + '</p>');
-    document.close();
   } else {
     alert('Invalid response given. Please try again.');
     count--;
   }
+
   if (answer === corAns[count][0] || answer === corAns[count][1]) {
     correct++;
   }
@@ -61,9 +58,7 @@ for (var guess = 4; guess >= 1; guess--) {
     alert(feedback);
     guess = 0;
     correct++;
-    document.open();
     document.write('<p class="guess">' + feedback + '</p>');
-    document.close();
   } else if (guess > 1) {
     if (parseInt(answer7) > randomNum) {
       alert('Your guess was too high! Try again!');
@@ -72,9 +67,7 @@ for (var guess = 4; guess >= 1; guess--) {
     }
   } else {
     alert('You are out of tries! The answer was ' + randomNum);
-    document.open();
     document.write('<p class="guess">' + user + ' was unable to guess the number ' + randomNum + '</p>');
-    document.close();
   }
 }
 
@@ -102,9 +95,7 @@ for (var guess = 6; guess >= 1; guess--) {
     alert('You are out of tries! Here were the acceptable answers: ' + question8);
   }
 }
-document.open();
 document.write('<p class="guess">Here are some of my favorite snacks: ' + question8 + '</p>');
-document.close();
 
 //This portion evaluates the user's accuracy for guessing the answers and provides contextual feedback based on how they did.
 var result;
