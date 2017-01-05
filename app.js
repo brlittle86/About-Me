@@ -38,6 +38,9 @@ for (var count = 0; count < questions.length; count++) {
   if (answer === corAns[count][0] || answer === corAns[count][1]) {
     correct++;
   }
+  document.open();
+  document.write('<p class="guess">' + questions[count] + ' ' + user + ' said: ' + answer + '. ' + feedback + '</p>');
+  document.close();
 }
 // var answer2 = prompt('Do you think Brandon is secretly a ninja?').toLowerCase();
 // console.log(user + ' entered: ' + answer2);
@@ -188,12 +191,12 @@ for (var count = 0; count < questions.length; count++) {
 // document.write('<p class="guess">Here are some of my favorite snacks: ' + question8 + '</p>');
 // document.close();
 //
-// var result;
-// if (correct > 5) {
-//   result = 'Great job!';
-// } else if (correct >= 3) {
-//   result = 'You did well for guessing!';
-// } else {
-//   result = 'Too bad!';
-// }
-// alert(user + ' got ' + correct + ' of 7 questions correct! ' + result);
+var result;
+if (correct > 5) {
+  result = 'Great job!';
+} else if (correct >= 3) {
+  result = 'You did well for guessing!';
+} else {
+  result = 'Too bad!';
+}
+alert(user + ' got ' + correct + ' of 7 questions correct! ' + result);
