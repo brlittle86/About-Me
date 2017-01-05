@@ -126,7 +126,11 @@ for (var guess = 4; guess >= 1; guess--) {
     guess = 0;
     correct++;
   } else if (guess > 1) {
-    alert('Incorrect! Try again.');
+    if (parseInt(answer7) > 42) {
+      alert('Your guess was too high! Try again!');
+    } else {
+      alert('Your guess was too low! Try again!');
+    }
   } else {
     alert('You are out of tries! The answer was 42.');
   }
