@@ -1,2 +1,5 @@
 # About-Me
-This is the first 201 project for week 1.
+Driver: Morgan Nomura
+Navigator: Brandon Little
+
+Collaborative project
