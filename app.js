@@ -27,8 +27,8 @@ var yesAnswers = ['He\'d like to think so!', 'He does not, but he likes cats!', 
 var noAnswers = ['You are probably right!', 'He wishes he had a cat', 'Sorry, but Brandon will try anything.', 'That\'s where you\'re wrong, buddy!', 'Thank you, but he is currently 30.'];
 var corAns = [['n', 'no'],['n', 'no'],['y', 'yes'],['y', 'yes'],['y', 'yes']];
 
-//This loop pulls the question, assesses the user's response, pulls the appropriate feedback and checks correctness for each of the array positions in the questions array, then writes the question, answer, and feedback to the webpage.
-for (var count = 0; count < questions.length; count++) {
+// Function for Yes/No questions; pulls the question, assesses the user's response, pulls the appropriate feedback and checks correctness for each of the array positions in the questions array, then writes the question, answer, and feedback to the webpage.
+function yesNoQuestion() {
   var answer = prompt(questions[count]).toLowerCase();
   if (answer === 'y' || answer === 'yes') {
     feedback = yesAnswers[count];
@@ -48,54 +48,67 @@ for (var count = 0; count < questions.length; count++) {
   }
 }
 
-//This loop generates a random number, then gives the user 4 total tries to guess the number, with feedback to guide the user towards the correct answer.
-var randomNum = Math.floor((Math.random() * 10) + 1);
-for (var guess = 4; guess >= 1; guess--) {
-  var answer7 = prompt('Can you guess a random number between 1 and 10? You have ' + (guess - 1) + ' more tries.');
-  console.log(user + ' entered: ' + answer7);
-  if (parseInt(answer7) === randomNum) {
-    feedback = 'Congratulations on guessing the number!';
-    alert(feedback);
-    guess = 0;
-    correct++;
-    document.write('<p class="guess">' + feedback + '</p>');
-  } else if (guess > 1) {
-    if (parseInt(answer7) > randomNum) {
-      alert('Your guess was too high! Try again!');
+//This function generates a random number, then gives the user 4 total tries to guess the number, with feedback to guide the user towards the correct answer.
+function randomNumQuestion() {
+  var randomNum = Math.floor((Math.random() * 10) + 1);
+  for (var guess = 4; guess >= 1; guess--) {
+    var answer7 = prompt('Can you guess a random number between 1 and 10? You have ' + (guess - 1) + ' more tries.');
+    console.log(user + ' entered: ' + answer7);
+    if (parseInt(answer7) === randomNum) {
+      feedback = 'Congratulations on guessing the number!';
+      alert(feedback);
+      guess = 0;
+      correct++;
+      document.write('<p class="guess">' + feedback + '</p>');
+    } else if (guess > 1) {
+      if (parseInt(answer7) > randomNum) {
+        alert('Your guess was too high! Try again!');
+      } else {
+        alert('Your guess was too low! Try again!');
+      }
     } else {
-      alert('Your guess was too low! Try again!');
+      alert('You are out of tries! The answer was ' + randomNum);
+      document.write('<p class="guess">' + user + ' was unable to guess the number ' + randomNum + '</p>');
     }
-  } else {
-    alert('You are out of tries! The answer was ' + randomNum);
-    document.write('<p class="guess">' + user + ' was unable to guess the number ' + randomNum + '</p>');
   }
 }
 
 //This loop asks the user to guess an answer from an array of strings. The user is given 6 attempts, and whether successful or not, the contents of the array is displayed to the user and written to the webpage.
-var question8 = ['oreos', 'sour patch kids', 'peanut butter m&ms', 'pretzels', 'chips', 'ice cream'];
-var confirm = false;
-for (var guess = 6; guess >= 1; guess--) {
-  var answer8 = prompt('Guess one of my favorite junk foods or candy! You have ' + (guess - 1) + ' more tries.').toLowerCase();
-  console.log(user + ' entered: ' + answer8);
-  for (var food = 0; food < question8.length; food++) {
-    if (answer8 == question8[food]) {
-      confirm = true;
-      food = question8.length;
+function guessSnacks() {
+  var question8 = ['oreos', 'sour patch kids', 'peanut butter m&ms', 'pretzels', 'chips', 'ice cream'];
+  var snacksList = question8.join(', ');
+  var confirm = false;
+  for (var guess = 6; guess >= 1; guess--) {
+    var answer8 = prompt('Guess one of my favorite junk foods or candy! You have ' + (guess - 1) + ' more tries.').toLowerCase();
+    console.log(user + ' entered: ' + answer8);
+    for (var food = 0; food < question8.length; food++) {
+      if (answer8 == question8[food]) {
+        confirm = true;
+        food = question8.length;
+      }
+    }
+    if (confirm === true) {
+      feedback = 'That is correct! ' + answer8 + ' is one of my favorite guilty pleasures.';
+      alert(feedback);
+      alert('Here were the possible correct answers: ' + snacksList);
+      guess = 0;
+      correct++;
+    } else if (guess > 1) {
+      alert('Incorrect! Please try again.');
+    } else {
+      alert('You are out of tries! Here were the acceptable answers: ' + snacksList);
     }
   }
-  if (confirm === true) {
-    feedback = 'That is correct! ' + answer8 + ' is one of my favorite guilty pleasures.';
-    alert(feedback);
-    alert('Here were the possible correct answers: ' + question8);
-    guess = 0;
-    correct++;
-  } else if (guess > 1) {
-    alert('Incorrect! Please try again.');
-  } else {
-    alert('You are out of tries! Here were the acceptable answers: ' + question8);
-  }
+  document.write('<p class="guess">Here are some of my favorite snacks: ' + snacksList + '</p>');
 }
-document.write('<p class="guess">Here are some of my favorite snacks: ' + question8 + '</p>');
+
+//This loop runs the yes no question function
+for (var count = 0; count < questions.length; count++) {
+  yesNoQuestion();
+}
+// Run other questions
+randomNumQuestion();
+guessSnacks();
 
 //This portion evaluates the user's accuracy for guessing the answers and provides contextual feedback based on how they did.
 var result;
