@@ -20,6 +20,7 @@ if (user) {
 var response;
 var feedback;
 var correct = 0;
+var validate = true;
 
 //arrays containing the questions, answers, and answer key, organized so that the array position of each item corresponds to the strings in the same array position in the other arrays.
 var questions = ['Do you think Brandon is secretly a ninja?', 'Does Brandon have any pets?', 'Is Brandon adventurous with his food?', 'Do you think that Brandon knows any other languages beyond English?', 'Do you think that Brandon is over the age of 30?'];
@@ -41,10 +42,13 @@ function yesNoQuestion() {
   } else {
     alert('Invalid response given. Please try again.');
     count--;
+    validate = false;
   }
 
-  if (answer === corAns[count][0] || answer === corAns[count][1]) {
-    correct++;
+  if (validate === true) {
+    if (answer === corAns[count][0] || answer === corAns[count][1]) {
+      correct++;
+    }
   }
 }
 
