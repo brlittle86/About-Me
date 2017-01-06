@@ -46,7 +46,7 @@ function yesNoQuestion() {
   }
 
   if (validate === true) {
-    if (answer === corAns[count][0] || answer === corAns[count][1]) {
+    if (corAns[count].includes(answer)) {
       correct++;
     }
   }
