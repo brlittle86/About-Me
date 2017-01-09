@@ -1,88 +1,91 @@
 body {
-  width: 800px;
-  height: 100%;
-  margin: auto;
-  text-align: center;
-  background-image: url(https://openclipart.org/image/2400px/svg_to_png/13778/alnilam-Stars-Pattern.png);
-  background-attachment: fixed;
-  background-position: center;
+    width: 800px;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    background-image: url("Files/alnilam-Stars-Pattern.png");
+    background-attachment: fixed;
+    background-position: center;
 }
 
 img.image {
-  float: right;
-  margin-right: 17%;
+    float: right;
+    margin-right: 17%;
 }
 
 div.hobbies {
-  margin-top: 120px;
+    margin-top: 120px;
 }
 
-h1, h4 {
-  font-family: helvetica;
-  background-color: blue;
-  border: 5px solid #000000;
-  border-radius: 14px;
-  padding: 3px;
+h1,
+h4 {
+    font-family: helvetica;
+    background-color: lightblue;
+    border: 5px solid #000000;
+    border-radius: 14px;
+    padding: 3px;
 }
 
 h1 {
-  font-size: 40px;
-  margin: auto;
+    font-size: 40px;
+    margin: auto;
 }
 
 h4 {
-  margin-left: 20%;
-  margin-right: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-ul, ol {
-  background-color: white;
-  text-align: justify;
-  background-size: 150px, auto;
-  width: 300px;
-  padding: auto;
-  border: 2px solid black;
-  border-radius: 15px;
-  margin-left: 20%;
-  margin-right: 20%;
+ul,
+ol {
+    background-color: white;
+    text-align: justify;
+    background-size: 150px, auto;
+    width: 300px;
+    padding: auto;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 ul.list1 {
-  width: 250px;
-  margin-left: 17%;
+    width: 250px;
+    margin-left: 17%;
 }
 
 p {
-  color: blue;
-  border: 2px solid white;
-  background-color: black;
-  border-radius: 10px;
-  text-align: left;
-  margin-left: 15%;
-  margin-right: 15%;
-}
-
-.more-content {
-  background-color: #00FF00;
+    color: teal;
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 10px;
+    text-align: left;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .guess {
-  background-color: white;
-  font: #000000;
-  border-radius: 10px;
-  border: 2px solid blue;
-  text-align: center;
-}
-
-#something-else {
-  border: 2px dashed #FF0000;
-  background-color: yellow;
+    background-color: white;
+    font: #000000;
+    border-radius: 10px;
+    border: 2px solid blue;
+    text-align: center;
 }
 
 img {
-  height: 135px;
-  width: 185px;
-  margin: auto;
-  border: 3px solid #FFFFFF;
-  border-radius: 20px;
+    height: 135px;
+    width: 185px;
+    margin: auto;
+    border: 3px solid #FFFFFF;
+    border-radius: 20px;
+}
+
+.credits {
+    background-color: cornflowerblue;
+    color: black;
+    font-color: black;
+    border: 2px dotted white;
+    text-align: center;
+    padding: auto;
+    margin: auto 30%;
 }
